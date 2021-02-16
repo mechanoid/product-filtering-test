@@ -1,0 +1,87 @@
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+/* Now, let's apply it on an element */
+body {
+  font-family: "system";
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+.color-block {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1rem;
+
+  border: 1px solid #acacac;
+
+}
+
+multi-select {
+  position: relative;
+}
+
+multi-select button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  display: block;
+}
+
+multi-select-options {
+  background-color: #fff;
+  position: absolute;
+  display: inline-grid;
+  /* height: 1rem; */
+  overflow: hidden;
+  border: 1px solid #000;
+  grid-template-columns: auto auto auto;
+  grid-gap: .5rem;
+  padding: 1.5rem;
+}
+
+multi-select-options label {
+  padding: 0.2rem 0.2rem 0rem 0.2rem;
+}
+
+multi-select-options input[type=checkbox] {
+  display: none;
+}
+
+multi-select-options input[type=checkbox]:checked + label {
+  border: 1px solid red;
+}
+
+product-list ul {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 1rem;
+}
+
+product-item {
+  display: block;
+  border: 1px solid #bcbcbc;
+  padding: 1rem;
+}
+
+filter-form {
+  display: block;
+  margin: 2rem 0;
+}
+
+filter-form input[type=submit] {
+  display: none;
+}

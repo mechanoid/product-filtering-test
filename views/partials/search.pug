@@ -1,0 +1,13 @@
+if products
+  each product, index in products
+    li
+      product-item
+        img(
+          is="lazy-img"
+          src=`data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480"%3E%3C/svg%3E`
+          data-src=`${product.image}?id=${product.id}`)
+        h4
+          = product.name
+          = " "
+          span.color-block(style=`background-color: ${product.color}`)
+

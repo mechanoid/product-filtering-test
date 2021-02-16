@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/assets/css/main.css")
+    script(type="module" src="/assets/js/filter-form.js" async)
+    script(type="module" src="/assets/js/multi-select.js" async)
+    script(type="module" src="/assets/js/infinite-scrolling.js" async)
+    title Product Search
+
+    script(type="module" src="/assets/js/lazy-img.js" defer)
+  body
+    h1 Product Search
+
+    infinite-scrolling(target="product-list ul" step="25")
+      filter-form(filters="product-list ul")
+        form(action='/' method='GET')
+          h3 Filters
+
+          multi-select
+            button(aria-expanded="false" aria-controls="color-filters") Colors
+            multi-select-options(id="color-filters" hidden)
+              if availableColors
+                each color in availableColors
+                  input(type="checkbox" name="colors" value=color id=color)
+                  label(for=color)
+                    span.color-block(style=`background-color: ${color}`)
+          input(type="submit" value="filter")
+      product-list
+        ul
+          include partials/search
+    footer
+      | Some Footer Content
