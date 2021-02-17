@@ -19,7 +19,7 @@ const createProduct = () => {
 
 const products = []
 
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 500; i++) {
   products.push(createProduct())
 }
 
