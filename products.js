@@ -19,9 +19,12 @@ const createProduct = () => {
 
 const products = []
 
-for (let i = 0; i < 500; i++) {
+const productCount = 1000
+for (let i = 0; i < productCount; i++) {
   products.push(createProduct())
 }
+
+console.log('INFO:', `${products.length} products created!`)
 
 export const getProducts = ({ from = 0, limit = 25, colors = [] } = {}) => {
   const filtered = (colors.length > 0
