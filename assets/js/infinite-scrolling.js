@@ -1,6 +1,6 @@
 /* global HTMLElement, customElements, FormData, fetch, IntersectionObserver  */
 
-const fetchProducts = async (form, target, step) => {
+const fetchThings = async (form, target, step) => {
   const data = new FormData(form)
   const url = new URL(form.getAttribute('action'), window.location.origin)
 
@@ -40,7 +40,7 @@ class InfiniteScrolling extends HTMLElement {
     this.scrollObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(async (entry) => {
         if (entry.isIntersecting) {
-          await fetchProducts(this.form, this.target, this.step)
+          await fetchThings(this.form, this.target, this.step)
         }
       })
     })
